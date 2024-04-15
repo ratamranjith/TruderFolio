@@ -21,7 +21,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("truder-folio-server.vercel.app", {})
+      .post("truder-folio-client.vercel.app", {})
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   };

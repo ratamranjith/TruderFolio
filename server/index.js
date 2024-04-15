@@ -4,7 +4,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: ["https://truder-folio-server.vercel.app/"],
+    origin: ["https://truder-folio-client.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: false,
   })
