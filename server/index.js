@@ -6,7 +6,7 @@ app.use(
   cors({
     origin: ["https://truder-folio-server.vercel.app/"],
     methods: ["POST", "GET"],
-    credentials: true,
+    credentials: false,
   })
 );
 app.use(express.json());
