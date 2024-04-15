@@ -227,4 +227,3 @@ router.post("/delete-certification", async (req, res) => {
 });
 
 module.exports = router;
-

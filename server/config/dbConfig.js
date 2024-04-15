@@ -1,4 +1,3 @@
-// Database Connection
 const mongoose = require("mongoose");
 console.log(process.env.mongo_url);
 
