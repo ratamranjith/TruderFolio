@@ -14,6 +14,21 @@ import {
 } from "./redux/rootSlice";
 function App() {
   // const [showLoading, setShowLoading] = useState(false); -> Temporary static check
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  axios.defaults.withCredentials = true;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("https://deploy-mern-api.vercel.app/register", {
+        name,
+        email,
+        password,
+      })
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
+  };
   const { loading, portfolioData, reloadData } = useSelector(
     (state) => state.root
   );
