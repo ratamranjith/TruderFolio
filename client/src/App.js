@@ -13,18 +13,7 @@ import {
   ShowLoading,
 } from "./redux/rootSlice";
 function App() {
-  // const [showLoading, setShowLoading] = useState(false); -> Temporary static check
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  axios.defaults.withCredentials = true;
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("truder-folio-client.vercel.app", {})
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
-  };
+  // const [showLoading, setShowLoading] = useState(false);
   const { loading, portfolioData, reloadData } = useSelector(
     (state) => state.root
   );
@@ -59,6 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin-login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,5 +1,4 @@
-// import "antd/dist/reset.css";
-import React from "react";
+import { useEffect } from "react";
 import Header from "../../components/Header";
 import { Tabs } from "antd";
 import AdminIntro from "./AdminIntro";
@@ -42,14 +41,32 @@ function Admin() {
 
   const { portfolioData } = useSelector((state) => state.root);
 
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/admin-login";
+    }
+  }, []);
+
   return (
     <div>
       <Header />
-      <h1 className="text-2xl px-5 py-2">Admin</h1>
+      <div className="flex gap-10 items-center px-5 py-2 justify-between">
+        <h1 className="text-2xl text-primary px-5 py-2">Admin Panel</h1>
+        <div className="w-60 h-[1px] bg-gray-500"></div>
+        <h1
+          className="underline text-primary text-xl cursor-pointer px-3 py-3 bg-teal-400 rounded-md"
+          onClick={() => {
+            localStorage.removeItem("token");
+            window.location.href = "/admin-login";
+          }}
+        >
+          Logout
+        </h1>
+      </div>
       {portfolioData && (
         <div className="mt-5 p-5">
           <Tabs
-            tabPosition="right"
+            tabPosition="left"
             items={pages.map((page, index) => {
               const id = String(index);
               return {
