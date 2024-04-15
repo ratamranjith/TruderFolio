@@ -5,8 +5,8 @@ const cors = require("cors");
 app.use(
   cors({
     origin: ["https://truderfolio-api.vercel.app/"],
-    methods: ["POST", "GET"],
-    credentials: false,
+    // methods: ["POST", "GET"],
+    // credentials: false,
   })
 );
 app.use(express.json());

@@ -22,7 +22,9 @@ function App() {
   const getPortfolioData = useCallback(async () => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.get("/api/portfolio/truder-portfolio");
+      const response = await axios.get(
+        "https://truder-api.vercel.app/api/portfolio/truder-portfolio"
+      );
       dispatch(SetPortfolioData(response.data));
       dispatch(ReloadData(false));
       dispatch(HideLoading());
