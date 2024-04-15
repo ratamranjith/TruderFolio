@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
+import Login from "./pages/Admin/Login";
 import { useEffect } from "react";
 import Loader from "./components/Loader";
 import axios from "axios";
