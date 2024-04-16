@@ -23,7 +23,7 @@ function App() {
     try {
       dispatch(ShowLoading());
       const response = await axios.get(
-        "https://truder-api.vercel.app/api/portfolio/truder-portfolio"
+        `{URL_DATA}/api/portfolio/truder-portfolio`
       );
       dispatch(SetPortfolioData(response.data));
       dispatch(ReloadData(false));
